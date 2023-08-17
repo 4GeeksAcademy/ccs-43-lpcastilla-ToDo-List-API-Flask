@@ -24,7 +24,8 @@ def add_new_todo():
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-    del todos[position]
+    position_updated = position - 1
+    del todos[position_updated]
     return jsonify(todos), 200
 
 if __name__ == '__main__':
